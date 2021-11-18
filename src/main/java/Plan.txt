@@ -1,0 +1,5 @@
+Strona index.html pokazuje formularz do wypelnienia aby ocenic piwa
+Strona beers.html pokazuje baze danych w tabelkach, ktora ukazuje piwa jakie zostaly wprowadzone
+Trzeba sciagnac jakis fajny template stryon
+Każda tabelka, th itd musi być w innym html
+W index tylko to, co ma wyświetlać. Cała konstrukcja na zewnątrz

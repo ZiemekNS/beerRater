@@ -1,0 +1,125 @@
+#navigacija {
+	width:980px;
+	margin-right:auto;
+	margin-left:auto;
+}
+.jqueryslidemenu {
+	width:980px;
+	height:50px;
+	margin-top:0;
+	margin-right:10px;
+	margin-bottom:0;
+	margin-left:10px;
+}
+.jqueryslidemenu ul {
+	margin:0;
+	padding:0;
+	list-style-type:none;
+	line-height:36px;
+	padding-top:6px;
+}
+.jqueryslidemenu ul li {
+	position:relative;
+	display:inline;
+	float:left;
+	z-index:205;
+}
+.jqueryslidemenu ul li a {
+	display:block;
+	color:#d5d5d5;
+	font-size:13px;
+	text-shadow:1px 1px 1px #000000;
+	text-decoration:none;
+	padding-top:0;
+	padding-right:32px;
+	padding-bottom:5px;
+	padding-left:32px;
+	background-image:url(../images/separator.png);
+	background-repeat:no-repeat;
+	background-position:right top;
+	letter-spacing:1px;
+}
+.jqueryslidemenu ul li.last a {
+	background:none;
+}
+* html .jqueryslidemenu ul li a {
+	display:inline-block;
+}
+.jqueryslidemenu ul li a:hover {
+	color:#FEDE94;
+}
+.jqueryslidemenu ul li.active a {
+	color:#FEDE94;
+}
+* html .jqueryslidemenu ul li a {
+	display:inline-block;
+}
+.jqueryslidemenu ul li a:link, .jqueryslidemenu ul li a:visited {
+	color:white;
+}
+.jqueryslidemenu ul li a:hover {
+	color:#FEDE94;
+}
+.jqueryslidemenu ul li.active a {
+	color:#FEDE94;
+}
+.jqueryslidemenu ul li ul {
+	position:absolute;
+	padding-top:3px;
+	left:0;
+	display:block;
+	visibility:hidden;
+	z-index:250;
+}
+.jqueryslidemenu ul li ul li {
+	display:list-item;
+	float:none;
+	z-index:199;
+}
+.jqueryslidemenu ul li ul li ul {
+	top:0;
+	z-index:198;
+}
+.jqueryslidemenu ul li.drop ul li a {
+	width:150px;
+	padding:10px 15px;
+	line-height:15px;
+	margin:0;
+	border-top-width:0;
+	text-shadow:none;
+	font-size:12px;
+	color:#fff;
+	background-color:rgb(77, 141, 196);
+	background-color:#4E4E4E;
+	background-image:none;
+	border-right-width:1px;
+	border-bottom-width:1px;
+	border-left-width:1px;
+	border-right-style:solid;
+	border-bottom-style:solid;
+	border-left-style:solid;
+	border-right-color:#191919;
+	border-bottom-color:#191919;
+	border-left-color:#191919;
+}
+.jqueryslidemenu ul li.last ul li a {
+	width:150px;
+	padding:10px 15px;
+	line-height:15px;
+	margin:0;
+	border-top-width:0;
+	color:#fff;
+	text-shadow:none;
+	background-color:rgb(77, 141, 196);
+	background-color:#4E4E4E;
+	border-bottom-style:solid;
+	border-bottom-color:#191919;
+	border-bottom-width:1px;
+}
+*:first-child+html ul li ul li a {
+	margin-top:-1px;
+}
+.jqueryslidemenu ul li ul li a:hover {
+	background-color:rgb(62, 120, 170);
+	background-color:#3F3F3F;
+}

@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:font-size="http://www.w3.org/1999/xhtml">
+<head>
+    <title>VDS 2</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="css/reset.css" rel="stylesheet" type="text/css"/>
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="css/navigacija.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jqueryslidemenu.js"></script>
+    <script type="text/javascript" src="js/jcarousel.js"></script>
+    <script type="text/javascript" src="js/init.js"></script>
+    <script type="text/javascript" src="js/fixit.js"></script>
+    <script type="text/javascript">
+$(document).ready(function () {
+    $(".latestnews").jCarouselLite({
+        vertical: true,
+        hoverPause: true,
+        visible: 2,
+        auto: 3000,
+        speed: 1000,
+        btnNext: ".next",
+        btnPrev: ".prev"
+    });
+});
+
+
+
+    </script>
+</head>
+<body>
+<div id="main1">
+    <div id="main2">
+        <div id="main3">
+            <div id="main4">
+                <div id="top">
+                    <div id="navigacija" class="jqueryslidemenu">
+                        <ul class="primary-menu">
+                            <li class="active"><a href="#">Strona Domowa</a></li>
+                            <li><a href="#">O nas</a></li>
+                            <li><a href="#">Usługi</a></li>
+                            <li class="drop"><a href="#">Partner &raquo;</a>
+                                <ul>
+                                    <li><a href="#">przykładowe submenu</a></li>
+                                    <li><a href="#">przykładowe submenu</a></li>
+                                    <li><a href="#">przykładowe submenu</a></li>
+                                    <li><a href="#">przykładowe submenu</a></li>
+                                </ul>
+                            </li>
+                            <li class="drop"><a href="#">Artykuły &raquo;</a>
+                                <ul>
+                                    <li><a href="#">przykładowe submenu</a></li>
+                                    <li><a href="#">przykładowe submenu</a></li>
+                                    <li><a href="#">przykładowe submenu</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Kontakt</a></li>
+                            <li class="last"><a href="#">Archiwum nowości</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div id="container">
+                    <div id="logo">
+                        <div id="languages">
+                            <ul>
+                                <li class="hr"><a id="liCroatian" href="#">Hrvatski</a></li>
+                                <li class="en"><a id="liEnglish" href="#">English</a></li>
+                                <li class="it"><a id="liItaliano" href="#">Italiano</a></li>
+                            </ul>
+                        </div>
+                        <div class="clear"></div>
+                        <div id="name"><a href="#"><img src="images/valeron.jpg" width="384" height="63" alt=""/></a>
+                        </div>
+                        <div id="message">Najobszerniejsza baza kraftowych piw!</div>
+                    </div>
+                    <div id="header">
+                        <div id="animacija">
+                            <!-- Rotate Slides Here -->
+                            <img src="images/slides/p_0001.jpg" width="676" height="277" alt=""/></div>
+                        <div id="novosti">
+                            <div class="newsbox">
+                                <h2>LAST NEWS</h2>
+                                <div class="latestnews">
+                                    <ul class="news">
+                                        <li><img src="images/img_latest1.jpg" alt="" class="imgleft imgborder"/><span
+                                                class="date">30. april 2011.</span><br/>
+                                            Piwo z dzika?!<br/>
+                                            <a href="#">Czytaj dalej</a></li>
+                                        <li><img src="images/img_latest2.jpg" alt="" class="imgleft imgborder"/><span
+                                                class="date">29. april 2011.</span><br/>
+                                            Piwo pochodzące z Titanica?
+                                        </li>
+                                        <li><img src="images/img_latest3.jpg" alt="" class="imgleft imgborder"/><span
+                                                class="date">28. april 2011.</span><br/>
+                                            Jaki wpływ na nomenklaturę społeczeństwa ma piwo?
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- end of latestnews -->
+                                <div class="navscroll"><a href="#" class="prev">Prev</a> <a href="#"
+                                                                                            class="next">Next</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="sadrzaj">
+                        <div class="box_lijevo">
+                            <div class="jedan676">
+                                <h1>Usiądź, oceń piwo i poszerz naszą bazę !</h1>
+                            </div>
+                            <br/>
+                            <div class="container">
+                                <div style="text-align: center">
+                                    <h4><a th:href="@{/rate}" style="font-size:32px; ">Oceń!</a></h4>
+                                </div>
+                                <br/>
+                                <br/>
+                                <div>
+                                    <div class="jedan676">
+                                        <h1>Jeśli chcesz ujrzeć aktualną bazę, zerknij poniżej:</h1>
+                                    </div>
+                                    <br/>
+                                </div>
+                                <div class="container" style="text-align: center">
+                                    <table>
+                                        <thead>
+                                        <th><b>Marka</b></th>
+                                        <th><b>Model</b></th>
+                                        <th><b>Ocena</b></th>
+                                        <th><b>Komentarz</b></th>
+                                        <th><b>Akcje</b></th>
+                                        </thead>
+                                        <tbody>
+                                        <tr th:each="beer : ${beers}">
+                                            <td th:text="${beer.company}"></td>
+                                            <td th:text="${beer.model}"></td>
+                                            <td th:text="${beer.rate}"></td>
+                                            <td th:text="${beer.comment}"></td>
+                                            <td>
+                                                <a th:href="|/beer/view/${beer.id}|">Zobacz</a>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                            <div class="dva">
+                                <h3>WIZJA</h3>
+                                <p><strong>Naszą wizją</strong>, jest aby społeczeństwo, przed wyborem piwa, zawsze
+                                    zasięgało wiedzy w tego portalu, aby uniknąć zakupu powodującego niesmak w ich
+                                    ustach.
+                            </div>
+                            <div class="tri">
+                                <h3>MISJA</h3>
+                                <p>Naszą misją jest zdobycie jak największej bazy <strong>piw</strong> i towarzyszących
+                                    im <strong>użytkowników</strong>. Tylko obszerna wiedza gwarantuje sukces i dobry
+                                    smak!</p>
+                            </div>
+                        </div>
+                        <div class="box_desno">
+                            <h5>Wsparcie</h5>
+                            <p><strong>Bartosz</strong><em>; </em><br/>
+                                <em>ZiemekNS</em><br/></p>
+                            <div id="download">
+                                <div id="download_sredina">
+                                    <p><a href="#">Dziennik piwiarza 2021</a></p>
+                                    <p><a href="#">Piwo dla opornych</a></p>
+                                </div>
+                                <div class="clear"></div>
+                                <div id="download_dolje"></div>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="footer_okvir">
+    <div id="footer">
+        <div class="footer_box1">
+            <h6>NIEMCY</h6>
+            <ul>
+                <li><a href="#">AUGUSTINER</a></li>
+                <li><a href="#">SCHNEIDER</a></li>
+                <li><a href="#">ROTHAUS</a></li>
+                <li><a href="#">KÖSTRITZER</a></li>
+            </ul>
+        </div>
+        <div class="footer_box1">
+            <h6>BELGIA</h6>
+            <ul>
+                <li><a href="#">BLANCHE DE NAMUR</a></li>
+                <li><a href="#">DUVEL</a></li>
+                <li><a href="#">KWAK</a></li>
+                <li><a href="#">CORSENDONK</a></li>
+                <li><a href="#">PALM</a></li>
+                <li><a href="#">AUGUSTIJN</a></li>
+                <li><a href="#">CHIMAY</a></li>
+                <li><a href="#">LINDEMANS</a></li>
+            </ul>
+        </div>
+        <div class="footer_box1">
+            <h6>BELGIA</h6>
+            <ul>
+                <li><a href="#">GULDEN DRAAK</a></li>
+                <li><a href="#">KARMELIET</a></li>
+                <li><a href="#">RODENBACH</a></li>
+                <li><a href="#">KASTEEL</a></li>
+                <li><a href="#">STEENBRUGGE</a></li>
+                <li><a href="#">DEUS</a></li>
+                <li><a href="#">ROCHEFORT</a></li>
+                <li><a href="#">ST. BERNARDUS</a></li>
+                <li><a href="#">WESTMALLE</a></li>
+            </ul>
+        </div>
+        <div class="footer_box1">
+            <h6>BELGIA</h6>
+            <ul>
+                <li><a href="#">MAREDSOUS</a></li>
+                <li><a href="#">ORVAL</a></li>
+                <li><a href="#">LIEFMANS</a></li>
+                <li><a href="#">GOUDEN CAROLUS</a></li>
+                <li><a href="#">ACHEL</a></li>
+                <li><a href="#">BOON</a></li>
+                <li><a href="#">LA CHOUFFE</a></li>
+                <li><a href="#">BRIGAND</a></li>
+            </ul>
+        </div>
+        <div class="footer_box1">
+            <h6>USA</h6>
+            <ul>
+                <li><a href="#">BROOKLYN</a></li>
+            </ul>
+            <h6>WLOCHY</h6>
+            <ul>
+                <li><a href="#">BALADIN</a></li>
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="clear"></div>
+<div id="copyright" style="text-align: center">
+    <footer th:replace="fragments/general.html :: footer(company='BeerRater.com', year='2021')"></footer>
+</div>
+</body>
+</html>
