@@ -30,7 +30,7 @@ class UserRepositoryTests {
         beer.setCompany("Warka");
         beer.setModel("Radler");
         beer.setRate(4);
-        beer.setComment("No fajno nie");
+        beer.setComment("No fajne, nie");
 
         Beer savedBeer = beerRepository.save(beer);
 

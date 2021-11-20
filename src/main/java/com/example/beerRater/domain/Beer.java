@@ -23,7 +23,7 @@ public class Beer {
     private String model;
     @Column(nullable = false, unique = true, length = 20)
     private int rate;
-    @Column(nullable = false, unique = true, length = 20)
+    @Column(nullable = false, unique = true, length = 60)
     private String comment;
 
     public Beer(String company, String model, int rate, String comment) {

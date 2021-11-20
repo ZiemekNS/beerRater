@@ -26,6 +26,7 @@ $(document).ready(function () {
 });
 
 
+
     </script>
 </head>
 <body>
@@ -140,7 +141,7 @@ $(document).ready(function () {
                                         <div class="form-group row">
                                             <label class="col-form-label col-4">Rate</label>
                                             <div class="col-8">
-                                                <input type="text" class="form-control" th:field="*{rate}" required/>
+                                                <input type="number" class="form-control" min="1" max="5" th:field="*{rate}" required/>
                                             </div>
                                         </div>
                                     </div>
@@ -153,7 +154,8 @@ $(document).ready(function () {
                                             </div>
                                         </div>
                                         <div>
-                                            <button type="submit" class="btn btn-primary">Send Rate</button>
+                                            <button type="submit" class="btn btn-primary">Wyślij ocenę</button>
+                                            <input type="reset">
                                         </div>
                                     </div>
                                 </form>
