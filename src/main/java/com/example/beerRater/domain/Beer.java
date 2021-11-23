@@ -17,13 +17,13 @@ public class Beer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(nullable = false, unique = true, length = 20)
+    @Column(nullable = false, unique = true)
     private String company;
-    @Column(nullable = false, unique = true, length = 20)
+    @Column(nullable = false, unique = true)
     private String model;
-    @Column(nullable = false, unique = true, length = 20)
+    @Column(nullable = false, unique = true)
     private int rate;
-    @Column(nullable = false, unique = true, length = 60)
+    @Column(nullable = false, unique = true)
     private String comment;
 
     public Beer(String company, String model, int rate, String comment) {

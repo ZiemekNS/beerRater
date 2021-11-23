@@ -46,6 +46,6 @@ buildmenu:function(menuid, arrowsvar){
 }
 }
 
-//build menu with ID="navigacija" on page:
-//jqueryslidemenu.buildmenu("navigacija", arrowimages) - older version with arrows
-jqueryslidemenu.buildmenu("navigacija")
+//build menu with ID="navigation" on page:
+//jqueryslidemenu.buildmenu("navigation", arrowimages) - older version with arrows
+jqueryslidemenu.buildmenu("navigation")

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class HomeController {
-    private final String title = "Test page";
+    private final String title = "Baza piw";
 
     @Autowired
     private BeerRepository beerRepository;
