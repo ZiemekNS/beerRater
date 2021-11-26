@@ -4,9 +4,8 @@
 <head>
     <title>Baza piw kraftowych - Sprawdź bazę</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link href="../../css/reset.css" rel="stylesheet" type="text/css"/>
     <link href="../../css/style.css" rel="stylesheet" type="text/css"/>
-    <link href="../../css/navigacija.css" rel="stylesheet" type="text/css"/>
+    <link href="../../css/navigation.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="../../js/jquery.min.js"></script>
     <script type="text/javascript" src="../../js/jqueryslidemenu.js"></script>
     <script type="text/javascript" src="../../js/jcarousel.js"></script>
@@ -26,6 +25,7 @@ $(document).ready(function () {
 });
 
 
+
     </script>
 </head>
 <body>
@@ -34,7 +34,7 @@ $(document).ready(function () {
         <div id="main3">
             <div id="main4">
                 <div id="top">
-                    <div id="navigacija" class="jqueryslidemenu">
+                    <div id="navigation" class="jqueryslidemenu">
                         <ul class="primary-menu">
                             <li class="active"><a href="#">Strona Domowa</a></li>
                             <li><a href="#">O nas</a></li>
@@ -115,7 +115,7 @@ $(document).ready(function () {
                                 <div>
                                     <p>Marka: <span th:text="${beer.company}"></span></p>
                                     <p>Model: <span th:text="${beer.model}"></span></p>
-                                    <p>Ocena: <span th:text="${beer.navigation}"></span></p>
+                                    <p>Ocena: <span th:text="${beer.rate}"></span></p>
                                     <p>Komentarz: <span th:text="${beer.comment}"></span></p>
                                 </div>
                             </div>
