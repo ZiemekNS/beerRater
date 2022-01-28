@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BeerRaterApplication {
+public class PropertyAdderApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(BeerRaterApplication.class, args);
+        SpringApplication.run(PropertyAdderApplication.class, args);
     }
 
 }

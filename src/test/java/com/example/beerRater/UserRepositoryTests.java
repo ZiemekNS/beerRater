@@ -2,8 +2,8 @@ package com.example.beerRater;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import com.example.beerRater.domain.Beer;
-import com.example.beerRater.repositories.BeerRepository;
+import com.example.beerRater.domain.Property;
+import com.example.beerRater.repositories.PropertyRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -12,6 +12,8 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.annotation.Rollback;
 
+import java.time.LocalDate;
+
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = Replace.NONE)
 @Rollback(false)
@@ -19,23 +21,23 @@ class UserRepositoryTests {
 
 
     @Autowired
-    private BeerRepository beerRepository;
+    private PropertyRepository propertyRepository;
 
     @Autowired
     private TestEntityManager entityManager;
 
     @Test
     public void testRateBeer() {
-        Beer beer = new Beer();
-        beer.setCompany("Warka");
-        beer.setModel("Radler");
-        beer.setRate(4);
-        beer.setComment("No fajne, nie");
+        Property property = new Property();
+        property.setPropertyName("Warka");
+        property.setLandlordName("Radler");
+        property.setReservationStartDate(LocalDate.of(2022,1,24));
+        property.setReservationEndDate(LocalDate.of(2022,1,28));
 
-        Beer savedBeer = beerRepository.save(beer);
+        Property savedProperty = propertyRepository.save(property);
 
-        Beer existBeer = entityManager.find(Beer.class, savedBeer.getId());
+        Property existProperty = entityManager.find(Property.class, savedProperty.getId());
 
-        assertThat(existBeer.getCompany()).isEqualTo(beer.getCompany());
+        assertThat(existProperty.getPropertyName()).isEqualTo(property.getPropertyName());
     }
 }

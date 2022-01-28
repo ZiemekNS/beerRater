@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Dodaj obiekt do bazy</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+</head>
+<body>
+<div class="container text-left">
+    <div>
+        <h2>Dodaj obiekt do bazy:</h2>
+    </div>
+    <br/>
+    <form th:action="@{/property_submit}" method="post"
+          style="max-width: 600px; margin: 0 auto;"
+          th:object="${properties}">
+        <div class="m-3">
+            <div class="form-group row">
+                <label class="col-form-label col-4">Nazwa obiektu</label>
+                <div class="col-8">
+                    <input type="text" class="form-control" th:field="*{propertyName}" required/>
+                </div>
+            </div>
+        </div>
+
+        <div class="m-3">
+            <div class="form-group row">
+                <label class="col-form-label col-4">Imię właściciela</label>
+                <div class="col-8">
+                    <input type="text" class="form-control" th:field="*{landlordName}" required/>
+                </div>
+            </div>
+        </div>
+
+        <div class="m-3">
+            <div class="form-group row">
+                <label class="col-form-label col-4">Początek rezerwacji (dd-mm-yyyy)</label>
+                <div class="col-8">
+                    <input class="form-control" pattern="\d{2}-\d{2}-\d{4}" th:field="*{reservationStartDate}" required/>
+                </div>
+            </div>
+        </div>
+
+        <div class="m-3">
+            <div class="form-group row">
+                <label class="col-form-label col-4">Koniec rezerwacji (dd-mm-yyyy)</label>
+                <div class="col-8">
+                    <input class="form-control"pattern="\d{2}-\d{2}-\d{4}" th:field="*{reservationEndDate}" required/>
+                </div>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary">Wyślij ocenę</button>
+                <input type="reset">
+            </div>
+        </div>
+    </form>
+    <br/>
+</div>
+</body>
+</html>

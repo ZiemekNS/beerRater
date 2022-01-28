@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>beerRater</artifactId>
+    <artifactId>propertyBase</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>beerRater</name>
-    <description>Rate Your beer!</description>
+    <name>propertyBase</name>
+    <description>Add Your property!</description>
     <properties>
         <java.version>11</java.version>
     </properties>
@@ -34,6 +34,10 @@
             <groupId>javax.xml.bind</groupId>
             <artifactId>jaxb-api</artifactId>
             <version>2.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
         </dependency>
         <dependency>
             <groupId>org.webjars</groupId>
@@ -58,6 +62,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
             <version>2.3.3.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.joutvhu</groupId>
+            <artifactId>spring-dynamic-jpa</artifactId>
+            <version>2.3.3</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Zmień rezerwację</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+</head>
+<body>
+<div class="container">
+    <h3>Rezerwacja numer: <span th:text="${properties.id}"></span></h3>
+    <div>
+        <p>Nazwa obiektu: <span th:text="${properties.propertyName}"></span></p>
+        <p>Imię właściciela: <span th:text="${properties.landlordName}"></span></p>
+        <p>Początek rezerwacji: <span th:text="${properties.reservationStartDate}"></span></p>
+        <p>Koniec rezerwacji: <span th:text="${properties.reservationEndDate}"></span></p>
+    </div>
+    <form th:action="@{/property_submit}" method="post"
+          style="max-width: 600px; margin: 0 auto;"
+          th:object="${properties}">
+        <div class="m-3">
+            <div class="form-group row">
+                <label class="col-form-label col-4">Zmień początek rezerwacji (dd-mm-yyyy)</label>
+                <div class="col-8">
+                    <input class="form-control" pattern="\d{2}-\d{2}-\d{4}" th:field="*{reservationStartDate}" required/>
+                </div>
+            </div>
+        </div>
+
+        <div class="m-3">
+            <div class="form-group row">
+                <label class="col-form-label col-4">Zmień koniec rezerwacji (dd-mm-yyyy)</label>
+                <div class="col-8">
+                    <input class="form-control"pattern="\d{2}-\d{2}-\d{4}" th:field="*{reservationEndDate}" required/>
+                </div>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary">Zmień</button>
+                <input type="reset">
+            </div>
+        </div>
+    </form>
+
+
+</div>
+</body>
+</html>
