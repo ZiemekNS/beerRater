@@ -1,16 +1,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:font-size="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Baza piw kraftowych</title>
+    <title>Baza piw kraftowych - Sprawdź bazę</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link href="css/style.css" rel="stylesheet" type="text/css"/>
-    <link href="css/navigation.css" rel="stylesheet" type="text/css"/>
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/jqueryslidemenu.js"></script>
-    <script type="text/javascript" src="js/jcarousel.js"></script>
-    <script type="text/javascript" src="js/init.js"></script>
-    <script type="text/javascript" src="js/fixit.js"></script>
+    <link href="../../css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="../../css/navigation.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../js/jqueryslidemenu.js"></script>
+    <script type="text/javascript" src="../../js/jcarousel.js"></script>
+    <script type="text/javascript" src="../../js/init.js"></script>
+    <script type="text/javascript" src="../../js/fixit.js"></script>
     <script type="text/javascript">
 $(document).ready(function () {
     $(".latestnews").jCarouselLite({
@@ -23,10 +23,6 @@ $(document).ready(function () {
         btnPrev: ".prev"
     });
 });
-
-
-
-
 
 
 
@@ -74,29 +70,32 @@ $(document).ready(function () {
                             </ul>
                         </div>
                         <div class="clear"></div>
-                        <div id="name"><a href="#"><img src="images/valeron.jpg" width="384" height="63" alt=""/></a>
+                        <div id="name"><a href="#"><img src="../../images/valeron.jpg" width="384" height="63" alt=""/></a>
                         </div>
                         <div id="message">Najobszerniejsza baza kraftowych piw!</div>
                     </div>
                     <div id="header">
                         <div id="animacija">
                             <!-- Rotate Slides Here -->
-                            <img src="images/slides/p_0001.jpg" width="676" height="277" alt=""/></div>
+                            <img src="../../images/slides/p_0001.jpg" width="676" height="277" alt=""/></div>
                         <div id="novosti">
                             <div class="newsbox">
                                 <h2>LAST NEWS</h2>
                                 <div class="latestnews">
                                     <ul class="news">
-                                        <li><img src="images/img_latest1.jpg" alt="" class="imgleft imgborder"/><span
-                                                class="date">30. april 2021.</span><br/>
+                                        <li><img src="../../images/img_latest1.jpg" alt=""
+                                                 class="imgleft imgborder"/><span
+                                                class="date">30. april 2011.</span><br/>
                                             Piwo z dzika?!<br/>
                                             <a href="#">Czytaj dalej</a></li>
-                                        <li><img src="images/img_latest2.jpg" alt="" class="imgleft imgborder"/><span
-                                                class="date">29. april 2021.</span><br/>
+                                        <li><img src="../../images/img_latest2.jpg" alt=""
+                                                 class="imgleft imgborder"/><span
+                                                class="date">29. april 2011.</span><br/>
                                             Piwo pochodzące z Titanica?
                                         </li>
-                                        <li><img src="images/img_latest3.jpg" alt="" class="imgleft imgborder"/><span
-                                                class="date">28. april 2021.</span><br/>
+                                        <li><img src="../../images/img_latest3.jpg" alt=""
+                                                 class="imgleft imgborder"/><span
+                                                class="date">28. april 2011.</span><br/>
                                             Jaki wpływ na nomenklaturę społeczeństwa ma piwo?
                                         </li>
                                     </ul>
@@ -110,52 +109,14 @@ $(document).ready(function () {
                     <div class="clear"></div>
                     <div class="sadrzaj">
                         <div class="box_lijevo">
-                            <div class="jedan676">
-                                <h1>Usiądź, oceń piwo i poszerz naszą bazę !</h1>
-                            </div>
                             <br/>
                             <div class="container">
-                                <div style="text-align: center">
-                                    <h4><a th:href="@{/rate}" style="font-size:32px; ">Oceń!</a></h4>
-                                </div>
-                                <br/>
-                                <br/>
+                                <h3>Piwo o numerze id: <span th:text="${beer.id}"></span></h3>
                                 <div>
-                                    <div class="jedan676">
-                                        <h1>Jeśli chcesz ujrzeć aktualną bazę, zerknij poniżej:</h1>
-                                    </div>
-                                    <br/>
-                                </div>
-                                <div class="container" style="text-align: center">
-                                    <div>
-                                        <form th:action="@{/}" method="get">
-                                            Filter: <input id="txtSearch" type="text" name="keyword"/>
-                                            &nbsp;
-                                            <input type="submit" value="Search"/>
-                                            &nbsp;
-                                            <input type="button" value="Clear" id="btnClear" onclick="clearSearch()"/>
-                                        </form>
-                                    </div>
-                                    <table>
-                                        <thead>
-                                        <th><b>Marka</b></th>
-                                        <th><b>Model</b></th>
-                                        <th><b>Ocena</b></th>
-                                        <th><b>Komentarz</b></th>
-                                        <th><b>Akcje</b></th>
-                                        </thead>
-                                        <tbody>
-                                        <tr th:each="beer : ${beers}">
-                                            <td th:text="${beer.company}"></td>
-                                            <td th:text="${beer.model}"></td>
-                                            <td th:text="${beer.rate}"></td>
-                                            <td th:text="${beer.comment}"></td>
-                                            <td>
-                                                <a th:href="|/beer/view/${beer.id}|">Zobacz</a>
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
+                                    <p>Marka: <span th:text="${beer.company}"></span></p>
+                                    <p>Model: <span th:text="${beer.model}"></span></p>
+                                    <p>Ocena: <span th:text="${beer.rate}"></span></p>
+                                    <p>Komentarz: <span th:text="${beer.comment}"></span></p>
                                 </div>
                             </div>
                             <div class="clear"></div>
